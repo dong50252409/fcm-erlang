@@ -6,51 +6,15 @@ This software provides an Erlang client for [`Firebase Cloud Messaging`](https:/
 * Android
 * iOS notifications
 
-# Changelog
-
-__1.1.0 [ 10 June 2020 ]__ 
-
-* Added support for firebase http v1 cloud messaging.
-
-__1.0.1__
-
-* Remove qdate dependency
-
-__1.0.0__
-
-* Initial Release
-
-### How to compile:
-
-`fcm-erlang` uses `erlang.mk` as make system. To compile
-
-```
-$ make
-```
-    
-To generate release
-
-```
-$ make rel
-```
- 
-### How to use with rebar:
+### How to use with rebar3:
 
 You can use fcm_app as a dependency in your rebar.config:
 
 ```
 {deps , [
-    {fcm, ".*", {git, "https://github.com/pankajsoni19/fcm-erlang.git", {tag, "1.1.0"}}}
+    {fcm, {git, "https://github.com/dong50252409/fcm-erlang", {branch, "master"}}}
 ]}.
 ```
-
-### How to run the application fcm-erlang:
-
-`make rel` will create a release under `_rel/fcm` directory. 
-
-    $ cd _rel/fcm
-    $ bin/fcm console
-
 ### Start FCM Service
 
 Two connection types are supported.
@@ -86,7 +50,8 @@ Where
 ``` 
 * `RegistereName` is the atom used during registration
 * `RegId` is Registration Id specified as Erlang binary (e.g., `<<"APA91bHun4MxP5egoKMwt2KZFBaFUH-1RYqx...">>`)
-* `RegIds` is a list (max 1000 elements) of `RegId`	* `Message` is an Erlang Map.
+* `RegIds` is a list (max 1000 elements) of `RegId`	
+* `Message` is an Erlang Map.
 * `Retry` is only valid for legacy api.
 ```
 
